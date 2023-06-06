@@ -1,0 +1,47 @@
+{% extends 'base.html' %} 
+
+{% block 'main' %}
+<main id="main">
+    <div class="container my-5">
+        <div class="row">
+                 <div class="col-md-6 my-5 mx-auto">
+                     
+                         <div class="card m-5 p-5" style="width: 25rem; height: 28rem;">
+
+                         <form method="POST" action="">
+                             
+                                 {% csrf_token %}
+                                 <center>
+                                 <p><span style="color: rgb(44, 43, 43); font-size: xx-large;">Register Now</span></p>
+                                 </center>
+                                 <table>
+                                     {% for x in regfmdata %}
+                                         <tr>
+                                             <th>{{x.label_tag}}</th>
+                                             <td>{{x}}</td>
+                                         </tr>
+
+                                     {% endfor %}
+
+                                     
+                                     <tr>
+                                         <td><button type="submit" class="btn btn-dark mx-3 my-1">Register</button></td>
+                                     </tr>
+                                     
+                                 </table>
+
+                                 <div class="signup_link">
+                                     <b style="letter-spacing: normal;">Already a member? <a href="/" style="color:blue;">Login</a></b>
+                                 </div>
+                             
+                         </form>
+
+                     </div>
+
+                 </div>
+        </div>
+    </div>
+</main>
+
+
+{% endblock 'main' %}

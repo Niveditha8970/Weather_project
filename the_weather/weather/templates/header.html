@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="description"/>
+    <meta name="author" content="author" />
+    <meta name="keywords" content="keywords" />
+    <title>What's the weather like?</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+   <!--  <link href="{% static 'assets/main.css' %}" rel="stylesheet"> -->
+
+</head>
+<body>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Weather_Tracker
+                </h1>
+
+                <nav id="navbar" class="navbar">
+                    <ul>
+                    
+            
+                      {% if user.is_authenticated %}
+                      <li><a href="/logout">Logout</a></li>
+                      {% else %}
+                      <li><a href="/"></a></li>
+                      <li><a href="/register"></a></li>
+                      {% endif %}
+                      
+                      
+                    </ul>
+                  </nav><!-- .navbar -->
+            </div>
+        </div>
+    </section>
